@@ -5,15 +5,16 @@ import Modal from './components/Modal';
 import { useState } from 'react';
 
 function App() {
-
-  const [selectedImg, setSelectedImg] = useState(null)
+  const [selectedImg, setSelectedImg] = useState(null);
 
   return (
     <div className="App">
-      <Title></Title>
-      <UploadForm></UploadForm>
-      <ImageGrid setSelectedImg={setSelectedImg}></ImageGrid>
-      {selectedImg && <Modal selectedImg={selectedImg}></Modal> }
+      <Title/>
+      <UploadForm />
+      <ImageGrid setSelectedImg={setSelectedImg} />
+      { selectedImg && (
+        <Modal selectedImg={selectedImg} setSelectedImg={setSelectedImg} />
+      )}
     </div>
   );
 }
